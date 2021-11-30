@@ -1,3 +1,0 @@
-[submodule "sudo/lib/tclap"]
-	path = sudo/lib/tclap
-	url = https://github.com/mirror/tclap.git
