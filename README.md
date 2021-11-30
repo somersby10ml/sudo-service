@@ -42,6 +42,7 @@ VIsual Studio
 - [ ] Run applications like *wt.exe*
 - [ ] Flexible exception handling
 - [ ] Anti virus(?)
+- [ ] Change CurrentDirectory
 
 ## License
 MIT
