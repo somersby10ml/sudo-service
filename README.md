@@ -14,7 +14,7 @@ It runs as a Windows service and performs pipe communication.
 Download **install.ps1** from the release page and run it.
 Administrator privileges are required.
 ```
-Set-ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy Unrestricted
 ./install.ps1
 or
 ./install.ps1 -reg
