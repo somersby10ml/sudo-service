@@ -117,7 +117,7 @@ DWORD SendPipe(tstring path) {
 	}
 
 	DWORD cbWritten;
-	if (!WriteFile(hPipe, path.c_str(), (DWORD)path.size(), &cbWritten, NULL)) {
+	if (!WriteFile(hPipe, path.c_str(), (DWORD)((path.size() + 1) * sizeof(TCHAR)), &cbWritten, NULL)) {
 		dwErrorCode = GetLastError();
 		tcout << _T("Failed to send to service.") << std::endl;
 		tcout << _T("Error Message: ") << GetError(dwErrorCode) << std::endl;

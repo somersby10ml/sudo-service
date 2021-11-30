@@ -202,18 +202,12 @@ void readData(HANDLE hPipe, LPVOID lpBinary, DWORD dwSize) {
 		if (!pFilePath)
 			throw ERROR_INVALID_PARAMETER;
 
-		tstring runPath;
-#if defined(UNICODE) || defined(_UNICODE)
-		runPath = string_to_unicode(pFilePath);
-#else
-		runPath = pFilePath;
-#endif
-		DWORD h = (DWORD)RunAsInteractiveUser(nullptr, (TCHAR*)runPath.c_str());
+		DWORD h = (DWORD)RunAsInteractiveUser(nullptr, (TCHAR*)lpBinary);
 	}
 	catch (DWORD e) {
 		e;
 	}
-}
+	}
 
 DWORD WINAPI ServiceWorkerThread(LPVOID lpParam) {
 
