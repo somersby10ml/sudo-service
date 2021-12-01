@@ -84,8 +84,13 @@ int _tmain(int argc, TCHAR* argv[]) {
 		}
 	}
 
+
+	LPWSTR* lpFilePart = nullptr;
+	TCHAR lpBuffer[MAX_PATH];
+	SearchPath(NULL, argv[1], NULL, MAX_PATH, lpBuffer, lpFilePart);
+
 	// Send a command to execute a file as a pipe.
-	dwErrorCode = SendPipe(argv[1]);
+	dwErrorCode = SendPipe(lpBuffer);
 	return dwErrorCode;
 }
 

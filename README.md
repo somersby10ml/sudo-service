@@ -39,7 +39,7 @@ VIsual Studio
 
 
 ## TODO:
-- [ ] Run applications like *wt.exe*
+- [*] Run applications like *wt.exe*
 - [ ] Flexible exception handling
 - [ ] Anti virus(?)
 - [ ] Change CurrentDirectory

@@ -132,9 +132,6 @@ HRESULT RunAsInteractiveUser(const TCHAR* lpszProcessName, TCHAR* lpszCommendLin
 			__leave;
 		}
 
-		MyOutputDebugString(_T("userToken=%X, GetLastError=%d"), userToken, GetLastError());
-		MyOutputDebugString(_T("lpszCommendLine=%ws, GetLastError=%d"), lpszCommendLine, GetLastError());
-		MyOutputDebugString(_T("lpszCommendLine=%ws, GetLastError=%d"), lpszCommendLine, GetLastError());
 
 
 		if (userToken) {
@@ -202,12 +199,15 @@ void readData(HANDLE hPipe, LPVOID lpBinary, DWORD dwSize) {
 		if (!pFilePath)
 			throw ERROR_INVALID_PARAMETER;
 
+
+		//tstring CurrentDirectory = GetBaseName((TCHAR*)lpBinary);
+		//MyOutputDebugString(_T("CurrentDirectory: %ws"), CurrentDirectory.c_str());
 		DWORD h = (DWORD)RunAsInteractiveUser(nullptr, (TCHAR*)lpBinary);
 	}
 	catch (DWORD e) {
 		e;
 	}
-	}
+}
 
 DWORD WINAPI ServiceWorkerThread(LPVOID lpParam) {
 
